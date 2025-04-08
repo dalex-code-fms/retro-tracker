@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "PixelEmulator"; /* Nom de la police que tu vas utiliser */
+  src: url("./assets/fonts/PixelEmulator-xq08.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables */
+$main-background: #0d0b1f; // Deep black / Very dark purple
+$neon-green-accent: #39ff14; // Retro neon green
+$neon-purple-magenta-accent: #9f00ff; // Neon purple
+$light-text: #e0e0ff; // Bluish gray / Smoky white
+$button-hover: #ff206e; // Arcade red / Fluorescent pink
+$arcade: #372592;
+$logo-font: "PixelEmulator", sans-serif;
+
+/* Reset des styles par défaut des navigateurs */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px (62.5% de 16px qui est la taille par défaut des navigateurs) */
+}
+
+body {
+  font-family: sans-serif; /* Police de base */
+  line-height: 1.5; /* Espacement de ligne standard */
+  color: white;
+}
+
+/* Style pour les éléments de type bloc */
+ul,
+ol,
+dl {
+  list-style: none;
+}
+
+a {
+  text-decoration: none; /* Retirer le soulignement des liens */
+  color: inherit; /* Hériter la couleur du parent */
+}
+
+button {
+  background: none; /* Retirer le fond par défaut des boutons */
+  border: none; /* Retirer les bordures par défaut des boutons */
+  padding: 0; /* Retirer le padding par défaut */
+  cursor: pointer; /* Ajouter un curseur pointer pour les boutons */
+}
+
+input,
+textarea {
+  border: none; /* Retirer les bordures par défaut des champs de saisie */
+  outline: none; /* Retirer l'outline lors de la sélection des éléments */
+}
+
+/* Éviter le comportement par défaut des images */
+img {
+  max-width: 100%; /* Empêche les images de déborder de leur conteneur */
+  height: auto; /* Maintient les proportions des images */
+}
+
+/* Eviter les espacements sur les éléments de formulaire */
+fieldset {
+  border: none; /* Retirer la bordure de fieldset */
+}
+
+table {
+  border-collapse: collapse; /* Éviter les espacements entre les cellules */
+}
+
+/* Empêche le zoom sur les appareils mobiles */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}

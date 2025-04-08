@@ -1,0 +1,312 @@
+@import "./index.scss";
+
+.arcade {
+  width: 100%;
+  height: 100vh;
+  background-color: $main-background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+
+  &__screen-container {
+    width: 90%;
+    height: 80vh;
+    background-color: $arcade;
+    margin-top: 4rem;
+    border-radius: 2rem 2rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  &__header {
+    width: 100%;
+    height: 8rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__deco-grid {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+    -webkit-box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+    -moz-box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+    border-radius: 1rem;
+
+    .grid {
+      width: 95%;
+      height: 0.9rem;
+      background-color: #281b6b;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__logo {
+    flex-grow: 3;
+    background-color: $button-hover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: $logo-font;
+    color: white;
+    box-shadow: 0px 3px 7px 5px rgba(89, 15, 41, 0.75) inset;
+    -webkit-box-shadow: 0px 3px 7px 5px rgba(89, 15, 41, 0.75) inset;
+    -moz-box-shadow: 0px 3px 7px 5px rgba(89, 15, 41, 0.75) inset;
+  }
+
+  &__connexion {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+    -webkit-box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+    -moz-box-shadow: 0px 3px 7px 5px rgba(29, 19, 79, 0.75) inset;
+
+    button {
+      box-shadow: inset 0px 1px 0px 0px #f5978e;
+      background: linear-gradient(to bottom, #ff206e 5%, #c21954 100%);
+      background-color: #ff206e;
+      border-radius: 6px;
+      border: 1px solid #d02718;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 6px 24px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #810e05;
+
+      &:hover {
+        background: linear-gradient(to bottom, #c21954 5%, #ff206e 100%);
+        background-color: #c21954;
+      }
+
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+
+  &__screen {
+    margin-top: 2rem;
+    width: 100%;
+    height: 86%;
+    border-radius: 1rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      background-color: black;
+      border: 0.2rem solid $arcade;
+      border-radius: 1rem;
+      box-shadow: 0px 40px 100px -20px rgba(55, 37, 146, 0.75);
+      overflow-y: scroll;
+
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        margin-top: 4rem;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        width: 20rem;
+        height: 24rem;
+        background: linear-gradient(to bottom, #09010f, #9f00ff);
+        overflow-y: hidden;
+      }
+
+      .card-name {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .card_date {
+        font-size: 1.1rem;
+      }
+
+      .card-image {
+        width: 20rem;
+        height: 15rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__btn-container {
+    position: relative;
+    z-index: 0;
+    background-color: $arcade;
+    width: 100%;
+    height: 20%;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+  }
+
+  &__btn:nth-child(1) {
+    position: absolute;
+    top: 2rem;
+    left: 20rem;
+  }
+
+  &__btn:nth-child(2) {
+    position: absolute;
+    top: 5.5rem;
+    left: 45rem;
+  }
+
+  &__btn:nth-child(3) {
+    position: absolute;
+    top: 5.5rem;
+    right: 45rem;
+  }
+
+  &__btn:nth-child(4) {
+    position: absolute;
+    top: 2rem;
+    right: 20rem;
+  }
+}
+
+$bg: #333;
+$push-size: 10rem;
+
+[class*="push"] {
+  position: relative;
+  display: inline-block;
+  width: $push-size;
+  height: $push-size;
+  border: 0;
+  margin: 1em;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 200ms;
+}
+
+@mixin push-flat-style($color) {
+  box-shadow: inset 0 $push-size/32 0 lighten($color, 5%),
+    inset 0 (-$push-size/32) 0 darken($color, 5%),
+    inset 0 0 0 $push-size/32 darken($color, 3%),
+    inset 0 0 0 $push-size/12 $color,
+    inset 0 0 0 $push-size/10 darken($color, 20%),
+    inset 0 0 0 $push-size/9.2 darken($color, 50%),
+    inset 0 0 0 $push-size/7.5 transparentize(lighten($color, 30%), 0.3),
+    inset 0 0 0 $push-size/5.5 $color,
+    inset 0 $push-size/2.5 $push-size/7.5 darken($color, 5%),
+    inset 0 0 $push-size/10 $push-size/6 darken($color, 10%),
+    0 $push-size/20 0 rgba(0, 0, 0, 0.3);
+
+  background-color: $color;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: $push-size/20;
+    left: $push-size/10;
+    display: block;
+    width: $push-size/1.25;
+    height: $push-size/1.25;
+    border: $push-size/15 solid rgba(0, 0, 0, 0.3);
+    border-width: 0 0 $push-size/15;
+    border-radius: 50%;
+    transition-duration: 200ms;
+  }
+
+  &:active,
+  &.is-pushed {
+    box-shadow: inset 0 $push-size/32 0 lighten($color, 5%),
+      inset 0 (-$push-size/32) 0 darken($color, 5%),
+      inset 0 0 0 $push-size/32 darken($color, 3%),
+      inset 0 0 0 $push-size/12 $color,
+      inset 0 0 0 $push-size/10 darken($color, 20%),
+      inset 0 0 0 $push-size/8.5 darken($color, 40%),
+      inset 0 0 0 $push-size/7.5 transparentize(lighten($color, 30%), 0.8),
+      inset 0 0 0 $push-size/5.5 darken($color, 3%),
+      inset 0 $push-size/2.5 $push-size/7.5 darken($color, 8%),
+      inset 0 0 $push-size/10 $push-size/6 darken($color, 15%),
+      0 $push-size/20 0 rgba(0, 0, 0, 0.3);
+    background-color: darken($color, 2%);
+
+    &:after {
+      bottom: $push-size/20 + $push-size/15;
+      border-width: 0;
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  .push--flat:nth-of-type(#{$i}) {
+    @if $i == 1 or $i == 2 {
+      @include push-flat-style($neon-green-accent);
+    } @else {
+      @include push-flat-style($button-hover);
+    }
+  }
+}
+
+.arcade__screen div {
+  overflow-y: scroll;
+}
+
+.arcade__screen div::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.arcade__screen div::-webkit-scrollbar-thumb {
+  background-color: #9f00ff;
+  border-radius: 10px;
+  border: 3px solid #6a00cc;
+  box-shadow: 0px 0px 5px rgba(255, 0, 255, 0.5);
+}
+
+.arcade__screen div::-webkit-scrollbar-track {
+  background-color: #2a1a6b;
+  border-radius: 10px;
+}
+
+.arcade__screen div::-webkit-scrollbar-thumb:hover {
+  background-color: #c21954;
+  box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.7);
+}
+
+.arcade__screen div::-webkit-scrollbar-thumb:active {
+  background-color: #ff206e;
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.7);
+}

@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.scss";
+import React, { useState } from "react";
+import SearcBar from "./SearchBar";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [results, setResults] = useState([]);
+  const API_KEY = "a3149ac5ea1c4f4283cf94feabc19deb";
+
+  const handleSearch = async (query) => {
+    try {
+      const response = await fetch(
+        `https://api.rawg.io/api/games?key=${API_KEY}&search=${query}`
+      );
+      const data = await response.json();
+      setResults(data.results);
+      console.log(data.results);
+    } catch (error) {
+      console.error("Erreur de recherche :", error);
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div className="arcade">
+        <div className="arcade__screen-container">
+          <div className="arcade__header">
+            <div className="arcade__deco-grid">
+              <div className="grid"></div>
+              <div className="grid"></div>
+              <div className="grid"></div>
+              <div className="grid"></div>
+              <div className="grid"></div>
+              <div className="grid"></div>
+            </div>
+            <div className="arcade__logo">
+              <h1>RETROTRACKER</h1>
+            </div>
+            <div className="arcade__connexion">
+              <button>Connexion</button>
+            </div>
+          </div>
+          <div className="arcade__screen">
+            <div>
+              <SearcBar onSearch={handleSearch} />
 
-export default App
+              <ul className="card-container">
+                {results.map((game) => (
+                  <li key={game.id} className="card">
+                    <p className="card-name">{game.name}</p>
+                    <p className="card_date">Date: {game.released}</p>
+                    <img
+                      src={game.background_image}
+                      alt={`${game.name} image`}
+                      className="card-image"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="arcade__btn-container">
+          <button className="arcade__btn push--flat"></button>
+          <button className="arcade__btn push--flat"></button>
+          <button className="arcade__btn push--flat"></button>
+          <button className="arcade__btn push--flat"></button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default App;

@@ -1,0 +1,42 @@
+@import "./Layout.scss";
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: black;
+  border: 0.2rem solid $arcade;
+  border-radius: 1rem;
+  box-shadow: 0px 40px 100px -20px rgba(55, 37, 146, 0.75);
+  overflow-y: scroll;
+
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 8rem;
+  }
+
+  .btn-favorites {
+    position: fixed;
+    left: 15rem;
+    background-color: $button-hover;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

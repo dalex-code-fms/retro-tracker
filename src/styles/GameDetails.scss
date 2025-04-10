@@ -1,0 +1,138 @@
+@import "./Layout.scss";
+
+.home-container {
+  padding: 2rem 30rem 2rem 30rem;
+
+  .game__title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #9f00ff, #ff00ff);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+
+  .game__header-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .game__date-playtime {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .firstReleasedDate {
+      background-color: white;
+      border-radius: 0.4rem;
+      color: black;
+      font-weight: bold;
+      padding: 0 0.8rem;
+    }
+
+    .game__average-playtime {
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding-top: 1rem;
+    }
+  }
+
+  .game__image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 0.1rem solid $neon-green-accent;
+  }
+
+  .game__details-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+  }
+
+  .div1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .div2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .div3 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  .div4 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .div5 {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+  .div5 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .game__description,
+  .game__releasedDate,
+  .game__categories,
+  .game__plateforms,
+  .game__rating,
+  .game__stores,
+  .game__tags,
+  .game__website {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    position: relative;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    .game__field-label {
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      border-radius: 0.4rem;
+      color: rgb(54, 54, 54);
+      font-weight: bold;
+      padding: 0 0.8rem;
+    }
+  }
+
+  .game__categories span,
+  .game__plateforms span,
+  .game__stores span,
+  .game__tags span {
+    font-weight: bold;
+  }
+
+  .game__rating span {
+    font-size: 1.5rem;
+    color: $neon-green-accent;
+  }
+
+  .game__website a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

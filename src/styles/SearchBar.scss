@@ -1,0 +1,26 @@
+@import "./index.scss";
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  position: fixed;
+
+  input {
+    width: 50rem;
+    height: 3rem;
+    border-radius: 2rem 0 0 2rem;
+    border: 0.2rem solid $neon-green-accent;
+    padding: 1rem;
+  }
+
+  button {
+    color: white;
+    height: 3rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: center;
+    padding: 0 1rem 0 1rem;
+    border: 0.2rem solid $button-hover;
+    background-color: $button-hover;
+    font-weight: bold;
+  }
+}

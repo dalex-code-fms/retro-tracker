@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import GameDetails from "./pages/GameDetails";
 import Favorites from "./pages/Favorites";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/gameDetails/:id" element={<GameDetails />} />
         <Route path="/favorites" element={<Favorites />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

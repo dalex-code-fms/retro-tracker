@@ -1,8 +1,14 @@
 import React from "react";
 import "../styles/Layout.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Layout = ({ children }) => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="arcade">
       <div className="arcade__screen-container">
@@ -27,7 +33,9 @@ const Layout = ({ children }) => {
         <div className="arcade__screen">{children}</div>
       </div>
       <div className="arcade__btn-container">
-        <button className="arcade__btn push--flat"></button>
+        <button className="arcade__btn push--flat" onClick={handleGoBack}>
+          Retour
+        </button>
         <button className="arcade__btn push--flat"></button>
         <button className="arcade__btn push--flat"></button>
         <button className="arcade__btn push--flat"></button>

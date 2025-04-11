@@ -116,6 +116,10 @@
     justify-content: center;
     align-items: center;
     padding: 3rem 2rem;
+
+    .message {
+      margin: auto;
+    }
   }
 
   &__btn-container {
@@ -131,6 +135,7 @@
     position: absolute;
     top: 2rem;
     left: 20rem;
+    font-weight: bold;
   }
 
   &__btn:nth-child(2) {
